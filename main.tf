@@ -16,12 +16,12 @@ provider "aws" {
 
 # MODULES
 module "vpc" {
-  source          = "./modules/vpc"
+  source          = "./modulos/VPC"
   
 }
 
 module "rds" {
-  source            = "./modules/rds"
+  source            = "./modulos/RDS"
   sn_priv_1a_id     = module.vpc.sn_priv_1a_id 
   sn_priv_1c_id     = module.vpc.sn_priv_1c_id 
   sg_priv_id        = module.ec2.sg_priv_id 
@@ -29,7 +29,7 @@ module "rds" {
 }
 
 module "ec2" {
-  source           = "./modules/ec2"
+  source           = "./modulos/ec2"
   vpc_id           = module.vpc.vpc_id
   sn_pub_1a_id     = module.vpc.sn_pub_1a_id
   sn_pub_1c_id     = module.vpc.sn_pub_1c_id 
