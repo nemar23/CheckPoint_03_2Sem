@@ -95,7 +95,7 @@ resource "aws_route_table_association" "c" {
   route_table_id = aws_route_table.Public_Route_Table.id
 }
 # SUBNET ASSOCIATION
-resource "aws_route_table_association" "D" {
+resource "aws_route_table_association" "d" {
   subnet_id      = aws_subnet.sn_priv_1c.id
   route_table_id = aws_route_table.Priv_Route_Table.id
 }
